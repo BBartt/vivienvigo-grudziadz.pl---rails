@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<h1>Tytuł sekcji oferta</h1>
+<%= link_to 'Dodaj tytuł do sekcji', new_admin_offer_title_path %>
+<hr>
+<% @admin_offer_titles.each do |admin_offer_title| %>
+  <h2><%= admin_offer_title.title %></h2>
+  <%= link_to 'Edytuj', edit_admin_offer_title_path(admin_offer_title) %>
+  <%= link_to 'Usuń', admin_offer_title, method: :delete, data: { confirm: 'Czy napewno?' } %>
+  <hr>
+<% end %>
+
+<br>

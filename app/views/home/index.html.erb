@@ -1,0 +1,132 @@
+<main class="home">
+  <nav>
+    <span class="logo"></span>
+    <ul>
+      <li><a href="#o-nas">O nas</a></li>
+      <li><a href="#aktualnosci">Aktualności</a></li>
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#wykonane-zlecenia">Wykonane zlecenia</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <div id="img" class="img"></div>
+
+  <section id="o-nas" class="page-section about">
+    <h1>O nas</h1>
+    <p>
+      "Vivien Vigo" to marka sukien ślubnych obecna na polskim rynku od ponad 10 lat.
+      W tym samym czasie w Naszej galerii Mody ślubnej w suknie Vivien Vigo ubraliśmy setki panien młodych z całej Polski i nie tylko.
+      Suknie szyjemy według naszych projektów, odpowiadają one najnowszym trendom obowiązującym w światowej modzie ślubnej.
+      Zaufaj Naszemu wieloletniemu doświadczeniu i powierz Nam wybór swojej wymarzonej sukni ślubnej, abyś w tym najważniejszym dniu wyglądała wyjątkowo.
+      Kolekcje Naszych sukien prezentowaliśmy na kilkunastu ogólnopolskich targach ślubnych.
+    </p>
+  </section>
+
+  <section id="aktualnosci" class="page-section events">
+    <% if @admin_events.any? %>
+      <h1><%= @admin_events.first.title.html_safe %></h1>
+      <p><%= simple_format @admin_events.first.description.html_safe %></p>
+    <% end %>
+    <div class="hes-gallery">
+      <%= render partial: 'partials/images_display', locals: { images: @admin_events } %>
+    </div>
+  </section>
+
+  <section id="oferta" class="page-section offer">
+    <h1>Oferta</h1>
+    <p>
+      Obecnie posiadamy ponad 100 sukien ślubnych w różnych kolorach, rozmiarach i cenach.
+      <br>
+      Współpracujemy również z Grudziądzką firmą Growikar, dzięki temu oferujemy bogaty wybór obuwia ślubnego.
+      <br>
+      Znajdziesz u Nas również biżuterię, welony jak i bolerka, które czasem faktycznie się przydadzą.
+      <br />
+      Przyjdź - Zobacz- Przekonaj się sama!!!
+    </p>
+    <% if @admin_offer_titles.any? %>
+      <h2><%= @admin_offer_titles.first.title %></h2>
+    <% end %>
+    <div class="hes-gallery">
+      <%= render partial: 'partials/images_display', locals: { images: @admin_offer_images } %>
+    </div>
+  </section>
+
+  <section id="galeria" class="page-section gallery">
+    <h1>Galeria</h1>
+    <div class="hes-gallery">
+      <%= render partial: 'partials/images_display', locals: { images: @admin_gallery_images } %>
+    </div>
+  </section>
+
+  <section id="wykonane-zlecenia" class="page-section achievements">
+    <h1>Wykonane zlecenia</h1>
+    <div class="hes-gallery">
+      <%= render partial: 'partials/images_display', locals: { images: @admin_order_images } %>
+    </div>
+  </section>
+
+  <section id="kontakt" class="page-section contact">
+    <h1>Kontakt</h1>
+    <div class="contact__wrapper">
+      <table class="contact__wrapper__table">
+        <tr>
+          <td colspan="2">Godziny otwarcia:</td>
+        </tr>
+        <tr>
+          <td>Poniedziałek</td>
+          <td>10:00-17:00</td>
+        </tr>
+        <tr>
+          <td>Wtorek</td>
+          <td>10:00-17:00</td>
+        </tr>
+        <tr>
+          <td>Środa</td>
+          <td>10:00-17:00</td>
+        </tr>
+        <tr>
+          <td>Czwartek</td>
+          <td>10:00-17:00</td>
+        </tr>
+        <tr>
+          <td>Piątek</td>
+          <td>10:00-17:00</td>
+        </tr>
+        <tr>
+          <td>Sobota</td>
+          <td>10:00-14:00</td>
+        </tr>
+        <tr>
+          <td>Niedziela</td>
+          <td>nieczynne</td>
+        </tr>
+      </table>
+      <div class="contact__wrapper__address">
+        ul. Sikorskiego 1
+        <br />
+        86-300 Grudziądz
+        <br />
+        Numer telefonu: 56 477 56 46
+        <br />
+        <br />
+        <p>
+          E-mail: <a href="mailto:vivienvigogrudziadz@interia.pl">vivienvigogrudziadz@interia.pl</a>
+        </p>
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.4815644300365!2d18.75226861584404!3d53.495592480010586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4702cfc18120f065%3A0x9217cd10d6289e9f!2sVivien%20Vigo.%20Salon%20firmowy!5e0!3m2!1spl!2spl!4v1571096155073!5m2!1spl!2spl"></iframe>
+  </section>
+
+  <div id="my-tab">
+    <span class="handle">Facebook</span>
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSalonModySlubnejVivienVigo&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"></iframe>
+  </div>
+
+</main>

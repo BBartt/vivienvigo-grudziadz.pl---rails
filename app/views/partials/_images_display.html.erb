@@ -1,0 +1,17 @@
+<% images.each_with_index do |delete_image_path, index| %>
+
+  <% if(params[:controller].split('/')[0] == 'admin') %>
+    <%= link_to 'Usuń', delete_image_path, method: :delete, data: { confirm: 'Czy napewno?' } %>
+    <br>
+  <% end %>
+
+  <% if images[index].images.attached? %>
+    <% images[index].images.each do |img| %>
+      <%= image_tag(img) %>
+    <% end %>
+    <% if(params[:controller].split('/')[0] == 'admin') %> <hr> <% end %>
+  <% else %>
+    <p>brak zdjecia</p>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+<h1>Oferta</h1>
+<%= link_to 'Dodaj nowe zdjęcia do sekcji oferta', new_admin_offer_image_path %>
+<hr>
+<%= render partial: 'partials/images_display', locals: { images: @admin_offer_images } %>

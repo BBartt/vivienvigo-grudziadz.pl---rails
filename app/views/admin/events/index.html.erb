@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h1>Aktualności</h1>
+<%= link_to 'Dodaj wpis do sekcji aktualności', new_admin_event_path %>
+<hr>
+
+<% @admin_events.each do |admin_event| %>
+  <h1>Tytuł: <%= admin_event.title %></h1>
+  <h2>Opis: <%= simple_format admin_event.description %></h2>
+  <%= render partial: 'partials/images_display', locals: { images: @admin_events } %>
+<% end %>

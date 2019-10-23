@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+<h1>Wykonane zlecenia</h1>
+<%= link_to 'Dodaj nowe zdjęcia do sekcji wykonane zlecenia', new_admin_order_image_path %>
+<hr>
+<%= render partial: 'partials/images_display', locals: { images: @admin_order_images } %>

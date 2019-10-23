@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+<h1>Galeria</h1>
+<%= link_to 'Dodaj nowe zdjęcia do sekcji galeria', new_admin_gallery_image_path %>
+<hr>
+<%= render partial: 'partials/images_display', locals: { images: @admin_gallery_images } %>

@@ -1,0 +1,17 @@
+<%= form_with(model: admin_event, local: true) do |form| %>
+  <div class="field">
+    <%= form.label 'Dodaj tytuł' %>
+    <%= form.text_field :title, value: 'Aktualności' %>
+  </div>
+  <div class="field">
+    <%= form.label 'Dodaj opis' %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="field">
+    <%= form.label 'Dodaj zdjęcia' %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Utwórz' %>
+  </div>
+<% end %>

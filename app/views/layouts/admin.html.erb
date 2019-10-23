@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vivien Vigo - Salon Mody Ślubnej</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+  <div class="admin">
+    <nav>
+      <ul>
+        <li><%= link_to 'STRONA GŁÓWNA', root_path %></li>
+        <li><%= link_to 'AKTUALNOSCI', admin_events_path %></li>
+        <li><%= link_to 'TYTUŁ SEKCJI OFERTA', admin_offer_titles_path %></li>
+        <li><%= link_to 'OFERTA', admin_offer_images_path %></li>
+        <li><%= link_to 'GALERIA', admin_gallery_images_path %></li>
+        <li><%= link_to 'WYKONANE ZLECENIA', admin_order_images_path %></li>
+      </ul>
+    </nav>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>

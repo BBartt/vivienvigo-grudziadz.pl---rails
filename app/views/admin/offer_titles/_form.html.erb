@@ -1,0 +1,9 @@
+<%= form_with(model: admin_offer_title, local: true) do |form| %>
+  <div class="field">
+    <%= form.label 'Tytuł' %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Zapisz" %>
+  </div>
+<% end %>
